@@ -128,19 +128,19 @@ public class Shooting extends SubsystemBase {
   }
 
 
-  public int returnVelocity(){
+  public double returnVelocity(){
     return shootingMotor.getSelectedSensorVelocity();
   }
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    int error = shootingMotor.getClosedLoopError(1);
+    double error = shootingMotor.getClosedLoopError(1);
     if(error != 0)
     {
       DriverStation.reportWarning("Error: " + error, false);
     }
-    int position = shootingMotor.getSelectedSensorPosition();
-    int velocity = shootingMotor.getSelectedSensorVelocity();
+    double position = shootingMotor.getSelectedSensorPosition();
+    double velocity = shootingMotor.getSelectedSensorVelocity();
    // DriverStation.reportWarning("Position: " + position + " Velocity: " + velocity, false);
    
     double currentCenter = this.centerX.getDouble(0);

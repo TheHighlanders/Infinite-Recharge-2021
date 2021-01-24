@@ -40,7 +40,7 @@ public class Door extends SubsystemBase {
     door.setSelectedSensorPosition(0);
 
   }
-  public int DoorPos(){
+  public double DoorPos(){
     return door.getSelectedSensorPosition();
   }
 
