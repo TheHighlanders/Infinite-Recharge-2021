@@ -10,6 +10,19 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.SlewRateLimiter;
+import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.controller.RamseteController;
+import edu.wpi.first.wpilibj.geometry.Pose2d;
+import edu.wpi.first.wpilibj.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.kinematics.ChassisSpeeds;
+import edu.wpi.first.wpilibj.trajectory.Trajectory;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
+import java.util.List;
 
 
 
@@ -27,7 +40,13 @@ public class Robot extends TimedRobot {
   // private final Drive m_robotDrive = new Drive();
   // private final Conveyor m_robotIntake = new Conveyor();
   // private final OI m_OI = new OI(); 
-  
+  private final SlewRateLimiter m_speedLimiter = new SlewRateLimiter(3);
+  private final SlewRateLimiter m_rotLimiter = new SlewRateLimiter(3);
+
+  private final Drivetrain m_drive = new Drivetrain();
+  private final RamseteController m_ramsete = new RamseteController();
+  private final Timer m_timer = new Timer();
+  private Trajectory m_trajectory;
   
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -37,8 +56,15 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    m_robotContainer = new RobotContainer();
-    
+    setNetworkTablesFlushEnabled(true);
+
+    m_trajectory =
+        TrajectoryGenerator.generateTrajectory(
+            new Pose2d(2, 2, new Rotation2d()),
+            List.of(),
+            new Pose2d(6, 4, new Rotation2d()),
+            
+            new TrajectoryConfig(2, 2));
   }
 
   /**
@@ -77,7 +103,9 @@ public class Robot extends TimedRobot {
 
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand(); 
-
+    m_timer.reset();
+    m_timer.start();
+    m_drive.resetOdometry(m_trajectory.getInitialPose());
     // schedule the autonomous command (example)
     
     if (m_autonomousCommand != null) {
@@ -91,6 +119,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    double elapsed = m_timer.get();
+    Trajectory.State reference = m_trajectory.sample(elapsed);
+    ChassisSpeeds speeds = m_ramsete.calculate(m_drive.getPose(), reference);
+    m_drive.drive(speeds.vxMetersPerSecond, speeds.omegaRadiansPerSecond);
   }
 
   @Override
