@@ -57,6 +57,6 @@ public class Door extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    DriverStation.reportError("Door PID: " + door.getSelectedSensorPosition(), false);
+    //DriverStation.reportError("Door PID: " + door.getSelectedSensorPosition(), false);
   }
 }

@@ -74,7 +74,9 @@ public class Shooting extends SubsystemBase {
   public void ShootingLaunch(){
     
     //DriverStation.reportWarning("Bombs Away!" , false);
-    //DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeed , false);
+    DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeedPercent , false);
+    DriverStation.reportWarning("YEET Velocity" + shootingSpeedVelocity, false);
+
     // shootingMotor.set(ControlMode.PercentOutput, this.shootingSpeed/100);
     // shootingMotor.set(ControlMode.Velocity, setpoint * 1000);
 
@@ -97,9 +99,6 @@ public class Shooting extends SubsystemBase {
   {
     this.shootingSpeedVelocity = newSpeed;
   }
-
-
-
 
   public void incrementShootSpeed()
   {
@@ -141,6 +140,7 @@ public class Shooting extends SubsystemBase {
     }
     int position = (int) shootingMotor.getSelectedSensorPosition();
     int velocity = (int) shootingMotor.getSelectedSensorVelocity();
+    DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeedPercent , false);
    // DriverStation.reportWarning("Position: " + position + " Velocity: " + velocity, false);
    
     double currentCenter = this.centerX.getDouble(0);
