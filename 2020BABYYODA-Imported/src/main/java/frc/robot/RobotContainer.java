@@ -122,7 +122,7 @@ public class RobotContainer {
     // JoystickButton ClimbRight = new JoystickButton(m_OI.Control3, 5);
 
     JoystickButton ClimbUpLeft = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
-    ClimbUpLeft.whileHeld(new ClimberUpLeft(m_climberLeft));
+    ClimbUpLeft.whileHeld(new SetShootingSpeed(m_climberLeft));
     JoystickButton ClimbUpRight = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
     ClimbUpRight.whileHeld(new ClimberUpRight(m_climberRight));
     JoystickButton ClimbDownLeft = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
@@ -149,16 +149,14 @@ public class RobotContainer {
     // JoystickButton ShootReverse = new JoystickButton(m_OI.Control2, 6);
     // ShootReverse.whileHeld(new ShootingReverseCMD(m_Shooting));
     
-    JoystickButton red = new JoystickButton(m_OI.Control2, Constants.WHITE_BUTTON);
-    red.whenPressed(new SetShootingSpeed(m_Shooting, .75 * -30000));
-    JoystickButton yellow = 
-    
-    new JoystickButton(m_OI.Control2, Constants.BLUE_BUTTON);
-    yellow.whenPressed(new SetShootingSpeed(m_Shooting, .8 * -30000));
-    JoystickButton green = new JoystickButton(m_OI.Control2, Constants.WHITE_BUTTON_2);
-    green.whenPressed(new SetShootingSpeed(m_Shooting, .95 * -30000));
-    JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.RED_BUTTON);
-    blue.whenPressed(new SetShootingSpeed(m_Shooting, 1 * -30000));
+    JoystickButton red = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
+    red.whenPressed(new SetShootingSpeed(m_Shooting, .75 * shooting.shootingSpeedVelocity));
+    JoystickButton yellow = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
+    yellow.whenPressed(new SetShootingSpeed(m_Shooting, .8 * shooting.shootingSpeedVelocity));
+    JoystickButton green = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
+    green.whenPressed(new SetShootingSpeed(m_Shooting, .95 * shooting.shootingSpeedVelocity);
+    JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_RIGHT);
+    blue.whenPressed(new SetShootingSpeed(m_Shooting, 1 * shooting.shootingSpeedVelocity));
     
     
 
