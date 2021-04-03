@@ -150,13 +150,13 @@ public class RobotContainer {
     // ShootReverse.whileHeld(new ShootingReverseCMD(m_Shooting));
     
     JoystickButton red = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
-    red.whenPressed(new SetShootingSpeed(m_Shooting, .75 * Shooting.shootingSpeedVelocity));
+    red.whenPressed(new SetShootingSpeed(m_Shooting, .75 * m_Shooting.shootingSpeedVelocity));
     JoystickButton yellow = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
-    yellow.whenPressed(new SetShootingSpeed(m_Shooting, .8 * Shooting.shootingSpeedVelocity));
+    yellow.whenPressed(new SetShootingSpeed(m_Shooting, .8 * m_Shooting.shootingSpeedVelocity));
     JoystickButton green = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
-    green.whenPressed(new SetShootingSpeed(m_Shooting, .95 * Shooting.shootingSpeedVelocity);
+    green.whenPressed(new SetShootingSpeed(m_Shooting, .95 * m_Shooting.shootingSpeedVelocity);
     JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_RIGHT);
-    blue.whenPressed(new SetShootingSpeed(m_Shooting, 1 * Shooting.shootingSpeedVelocity));
+    blue.whenPressed(new SetShootingSpeed(m_Shooting, 1 * m_Shooting.shootingSpeedVelocity));
     
     
 
