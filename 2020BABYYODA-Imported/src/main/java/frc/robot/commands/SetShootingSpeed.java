@@ -25,13 +25,14 @@ public class SetShootingSpeed extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    this.m_Shooting.SetSpeed(1800);test
+    //this.m_Shooting.SetSpeed(-3000);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
     DriverStation.reportWarning("newspeed Check Shooting.java" + newSpeed,false);
+    m_Shooting.SetSpeed(newSpeed);
   }
 
   // Called once the command ends or is interrupted.

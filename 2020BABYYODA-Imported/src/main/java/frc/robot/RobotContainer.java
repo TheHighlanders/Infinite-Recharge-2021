@@ -122,7 +122,7 @@ public class RobotContainer {
     // JoystickButton ClimbRight = new JoystickButton(m_OI.Control3, 5);
 
     JoystickButton ClimbUpLeft = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
-    ClimbUpLeft.whileHeld(new SetShootingSpeed(m_climberLeft));
+    //ClimbUpLeft.whileHeld(new SetShootingSpeed(m_climberLeft));
     JoystickButton ClimbUpRight = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
     ClimbUpRight.whileHeld(new ClimberUpRight(m_climberRight));
     JoystickButton ClimbDownLeft = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
@@ -150,13 +150,13 @@ public class RobotContainer {
     // ShootReverse.whileHeld(new ShootingReverseCMD(m_Shooting));
     
     JoystickButton red = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
-    red.whenPressed(new SetShootingSpeed(m_Shooting, .75 * m_Shooting.shootingSpeedVelocity));
+    red.whileHeld(new SetShootingSpeed(m_Shooting, .75 * 30000));
     JoystickButton yellow = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
-    yellow.whenPressed(new SetShootingSpeed(m_Shooting, .8 * m_Shooting.shootingSpeedVelocity));
+    yellow.whileHeld(new SetShootingSpeed(m_Shooting, .8 * 30000));
     JoystickButton green = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
-    green.whenPressed(new SetShootingSpeed(m_Shooting, .95 * m_Shooting.shootingSpeedVelocity);
+    green.whileHeld(new SetShootingSpeed(m_Shooting, .95 * 30000));
     JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_RIGHT);
-    blue.whenPressed(new SetShootingSpeed(m_Shooting, 1 * m_Shooting.shootingSpeedVelocity));
+    blue.whileHeld(new SetShootingSpeed(m_Shooting, 1 * 30000));
     
     
 
