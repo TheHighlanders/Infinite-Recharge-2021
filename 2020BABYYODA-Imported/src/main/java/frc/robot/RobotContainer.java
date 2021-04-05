@@ -152,7 +152,7 @@ public class RobotContainer {
     JoystickButton red = new JoystickButton(m_OI.Control2, 1);
     red.whileHeld(new BetterSetShootingSpeed(m_Shooting, .5 * m_Shooting.shootingSpeedVelocity));
     JoystickButton yellow = new JoystickButton(m_OI.Control2, 2);
-    yellow.whileHeld(new BetterSetShootingSpeed(m_Shooting, .5 * m_Shooting.shootingSpeedVelocity));
+    yellow.whileHeld(new ShootingSpeed1(m_Shooting));
     JoystickButton green = new JoystickButton(m_OI.Control2, 3);
     green.whileHeld(new BetterSetShootingSpeed(m_Shooting, .5 * m_Shooting.shootingSpeedVelocity));
     JoystickButton blue = new JoystickButton(m_OI.Control2, 4);

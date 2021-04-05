@@ -26,7 +26,7 @@ public class Shooting extends SubsystemBase {
     private final double ramp = 0.2;
     public OI shooting_io;
     public double shootingSpeedPercent = 0;
-    public double shootingSpeedVelocity = 0;
+    public static double shootingSpeedVelocity = 0;
     public double shootingSpeedVelocityDefault = -3000; 
 
     private final NetworkTableInstance inst = NetworkTableInstance.getDefault();
