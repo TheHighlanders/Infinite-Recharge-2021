@@ -149,14 +149,14 @@ public class RobotContainer {
     // JoystickButton ShootReverse = new JoystickButton(m_OI.Control2, 6);
     // ShootReverse.whileHeld(new ShootingReverseCMD(m_Shooting));
     
-    JoystickButton red = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
-    red.whileHeld(new SetShootingSpeed(m_Shooting, .75 * 30000));
-    JoystickButton yellow = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
-    yellow.whileHeld(new SetShootingSpeed(m_Shooting, .8 * 30000));
-    JoystickButton green = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_LEFT);
-    green.whileHeld(new SetShootingSpeed(m_Shooting, .95 * 30000));
-    JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.CLIMB_DOWN_RIGHT);
-    blue.whileHeld(new SetShootingSpeed(m_Shooting, 1 * 30000));
+    JoystickButton red = new JoystickButton(m_OI.Control2, 1);
+    red.whenPressed(new BetterSetShootingSpeed(m_Shooting, .75 * m_Shooting.shootingSpeedVelocity));
+    JoystickButton yellow = new JoystickButton(m_OI.Control2, 2);
+    yellow.whenPressed(new BetterSetShootingSpeed(m_Shooting, .8 * m_Shooting.shootingSpeedVelocity));
+    JoystickButton green = new JoystickButton(m_OI.Control2, 3);
+    green.whenPressed(new BetterSetShootingSpeed(m_Shooting, .95 * m_Shooting.shootingSpeedVelocity));
+    JoystickButton blue = new JoystickButton(m_OI.Control2, 4);
+    blue.whenPressed(new BetterSetShootingSpeed(m_Shooting, 1 * m_Shooting.shootingSpeedVelocity));
     
     
 

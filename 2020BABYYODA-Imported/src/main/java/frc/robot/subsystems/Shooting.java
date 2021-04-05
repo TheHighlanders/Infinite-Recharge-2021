@@ -98,6 +98,7 @@ public class Shooting extends SubsystemBase {
   public void SetSpeed(double newSpeed)
   {
     this.shootingSpeedVelocity = newSpeed;
+    this.ShootingLaunch();
   }
 
   public void incrementShootSpeed()
