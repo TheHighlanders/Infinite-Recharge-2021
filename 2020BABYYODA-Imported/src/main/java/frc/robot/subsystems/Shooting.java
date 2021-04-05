@@ -63,7 +63,7 @@ public class Shooting extends SubsystemBase {
     shooting_io = new OI();
 
     this.shootingSpeedPercent = -85;//85 //-65
-    //this.shootingSpeedVelocity = -30000;
+    this.shootingSpeedVelocity = -30000;
     
   }
 
@@ -74,51 +74,25 @@ public class Shooting extends SubsystemBase {
   public void ShootingLaunch(){
     
     //DriverStation.reportWarning("Bombs Away!" , false);
-    DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeedPercent , false);
-    DriverStation.reportWarning("YEET Velocity" + shootingSpeedVelocity, false);
+    //DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeedPercent , false);
+    //DriverStation.reportWarning("YEET Velocity" + shootingSpeedVelocity, false);
 
     // shootingMotor.set(ControlMode.PercentOutput, this.shootingSpeed/100);
     // shootingMotor.set(ControlMode.Velocity, setpoint * 1000);
 
     final double setpoint = 210 - 1.03 * averageRange + 0.00189 * Math.pow(averageRange, 2);
-    DriverStation.reportWarning("Range: " + this.averageRange + "Setpoint: " + setpoint, false);
+    //DriverStation.reportWarning("Range: " + this.averageRange + "Setpoint: " + setpoint, false);
     // Enable line below for percentage output control.
     // shootingMotor.set(ControlMode.PercentOutput, this.shootingSpeed/100);
     shootingMotor.set(ControlMode.Velocity, this.shootingSpeedVelocity);
   }
 
-  public void SetSpeedAdd(Double input){
-    this.shootingSpeedVelocity = this.shootingSpeedVelocityDefault-input;
-  }
 
-  public void SetSpeedDecrease(Double input){
-    this.shootingSpeedVelocity = this.shootingSpeedVelocityDefault+input;
-  }
 
   public void SetSpeed(double newSpeed)
   {
     this.shootingSpeedVelocity = newSpeed;
     this.ShootingLaunch();
-  }
-
-  public void incrementShootSpeed()
-  {
-    // this.shootingSpeed = this.shootingSpeed + 5;
-    // if(this.shootingSpeed > 100000)
-    // {
-    //   this.shootingSpeed = 1;
-    // }
-    // DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeed , false);
-  }
-
-  public void decrementShootSpeed()
-  {
-    // this.shootingSpeed = this.shootingSpeed - 5;
-    // if(this.shootingSpeed < -100000)
-    // {
-    //   this.shootingSpeed = -1;
-    // }
-    // DriverStation.reportWarning("Shooting Speed:" + " " + this.shootingSpeed , false);
   }
 
   public void ShootingStop(){

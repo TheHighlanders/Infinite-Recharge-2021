@@ -35,7 +35,7 @@ public class SetSpeedAdd extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_Shooting.SetSpeedDecrease(m_OI.getXboxRightTrigger());
+    //m_Shooting.SetSpeedDecrease(m_OI.getXboxRightTrigger());
   }
 
   // Called once the command ends or is interrupted.

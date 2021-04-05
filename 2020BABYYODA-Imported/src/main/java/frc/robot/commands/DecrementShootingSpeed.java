@@ -29,7 +29,7 @@ public class DecrementShootingSpeed extends CommandBase {
     // Use addRand is initially scheduled.
   @Override
   public void initialize() {
-    m_Shooting.decrementShootSpeed();
+    //m_Shooting.decrementShootSpeed();
   }
 
   // Called every time the scheduler runs while the command is scheduled.

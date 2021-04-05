@@ -27,7 +27,7 @@ public class IncrementShootingSpeed extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_Shooting.incrementShootSpeed();
+    //m_Shooting.incrementShootSpeed();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
