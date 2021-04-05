@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 
 public class ShootingSpeed1 extends CommandBase {
   private final Shooting m_Shooting;
+  
   private double Speed1 = Constants.SHOOTER_PERCENT_1;
 
   public ShootingSpeed1(Shooting shooting_subsystem) {
@@ -26,9 +27,15 @@ public class ShootingSpeed1 extends CommandBase {
   @Override
   public void execute() {
     DriverStation.reportWarning("executeSpeed1", false);
-    Speed1 = Constants.SHOOTER_PERCENT_1*Shooting.shootingSpeedVelocity;
-    m_Shooting.SetSpeed(Speed1);
+    //Speed1 = Constants.SHOOTER_PERCENT_1*Shooting.shootingSpeedVelocity;
+   
+    /*
+      This is just calling the speedOne method in the shootingSpeed subsystem
+      and running the Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity part
+    */
+    m_Shooting.speedOne();
   }
+
   @Override
   public void end(boolean interrupted) {}
 

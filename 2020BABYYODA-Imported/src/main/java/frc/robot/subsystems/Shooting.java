@@ -87,6 +87,14 @@ public class Shooting extends SubsystemBase {
     shootingMotor.set(ControlMode.Velocity, this.shootingSpeedVelocity);
   }
 
+  /*
+    Added speedOne method so we can call it in the 
+    ShootingSpeed1.java command. The math is the same though
+  */
+  public void speedOne(){
+    shootingMotor.set(Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity);
+  }
+
 
 
   public void SetSpeed(double newSpeed)
