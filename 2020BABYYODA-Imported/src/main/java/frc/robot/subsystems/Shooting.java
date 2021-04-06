@@ -64,6 +64,8 @@ public class Shooting extends SubsystemBase {
 
     this.shootingSpeedPercent = -85;//85 //-65
     this.shootingSpeedVelocity = -30000;
+
+    shootingMotor.configClosedloopRamp(0.5);
     
   }
 

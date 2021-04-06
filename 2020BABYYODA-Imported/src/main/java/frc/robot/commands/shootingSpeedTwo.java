@@ -35,13 +35,15 @@ public class shootingSpeedTwo extends CommandBase {
       This is just calling the speedOne method in the shootingSpeed subsystem
       and running the Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity part
     */
-    DriverStation.reportWarning("executeSpeed1" + (Shooting.shootingSpeedVelocity * Constants.SHOOTER_PERCENT_2), false);
+    DriverStation.reportWarning("executeSpeed2" + (Shooting.shootingSpeedVelocity * Constants.SHOOTER_PERCENT_2), false);
     m_Shooting.speedTwo();
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    m_Shooting.ShootingStop();
+  }
 
   // Returns true when the command should end.
   @Override
