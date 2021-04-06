@@ -95,7 +95,9 @@ public class Shooting extends SubsystemBase {
     shootingMotor.set(Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity);
   }
 
-
+  public void speedtwo(){
+    shootingMotor.set(Constants.SHOOTER_PERCENT_2 * Shooting.shootingSpeedVelocity);
+  }
 
   public void SetSpeed(double newSpeed)
   {
