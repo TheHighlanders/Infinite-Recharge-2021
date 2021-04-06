@@ -85,7 +85,9 @@ public final class Constants {
     public static final int CONVERYOR_OUT_BUTTON = 3;
 
     //Shooter Speeds
-    public static final double SHOOTER_PERCENT_1 = 0.5;
+    public static final double SHOOTER_PERCENT_1 = 0.000019; //Output is about 0.5
+    public static final double SHOOTER_PERCENT_2 = 0.000025; //Output is about 0.75
+    //0000005
     
    
 
