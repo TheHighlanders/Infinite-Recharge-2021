@@ -94,15 +94,15 @@ public class Shooting extends SubsystemBase {
     ShootingSpeed1.java command. The math is the same though
   */
   public void speedOne(){
-    shootingMotor.set(Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity);
+    shootingMotor.set(Constants.SHOOTER_PERCENT_0 * Shooting.shootingSpeedVelocity);
   }
 
   public void speedTwo(){
-    shootingMotor.set(Constants.SHOOTER_PERCENT_2 * Shooting.shootingSpeedVelocity);
+    shootingMotor.set(Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity);
   }
 
   public void speedThree(){
-    shootingMotor.set(Constants.SMEEE_CONSTANT * Shooting.shootingSpeedVelocity);
+    shootingMotor.set(Constants.SHOOTER_PERCENT_2 * Shooting.shootingSpeedVelocity);
   }
 
   public void SetSpeed(double newSpeed)

@@ -33,7 +33,7 @@ public class ShootingSpeed1 extends CommandBase {
       This is just calling the speedOne method in the shootingSpeed subsystem
       and running the Constants.SHOOTER_PERCENT_1 * Shooting.shootingSpeedVelocity part
     */
-    DriverStation.reportWarning("executeSpeed1" + (Shooting.shootingSpeedVelocity * Constants.SHOOTER_PERCENT_1), false);
+    DriverStation.reportWarning("executeSpeed1" + (Shooting.shootingSpeedVelocity * Constants.SHOOTER_PERCENT_0), false);
     m_Shooting.speedOne();
   }
 

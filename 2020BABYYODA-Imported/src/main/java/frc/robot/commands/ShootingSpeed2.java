@@ -12,10 +12,11 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 
 
 
-public class shootingSpeedTwo extends CommandBase {
+public class ShootingSpeed2 extends CommandBase {
   private final Shooting m_Shooting;
+
   /** Creates a new shootingSpeedTwo. */
-  public shootingSpeedTwo(Shooting shooting_subsystem) {
+  public ShootingSpeed2(Shooting shooting_subsystem) {
     m_Shooting = shooting_subsystem;
     addRequirements(m_Shooting);
     // Use addRequirements() here to declare subsystem dependencies.

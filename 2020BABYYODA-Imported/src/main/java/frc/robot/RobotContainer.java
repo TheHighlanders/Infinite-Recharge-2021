@@ -153,14 +153,14 @@ public class RobotContainer {
     JoystickButton red = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_LEFT);
     red.whileHeld(new ShootingCMD(m_Shooting));
     // 1/2 Speed
-    JoystickButton yellow = new JoystickButton(m_OI.Control3,Constants.TELESCOPE_UP_RIGHT);
+    JoystickButton yellow = new JoystickButton(m_OI.Control3,Constants.TELESCOPE_UP_LEFT);
     yellow.whileHeld(new ShootingSpeed1(m_Shooting));
     // 1/3 Speed
-    JoystickButton green = new JoystickButton(m_OI.Control3,Constants.TELESCOPE_UP_LEFT);
-    green.whileHeld(new ShootingSpeed3(m_Shooting));
+    JoystickButton green = new JoystickButton(m_OI.Control3,Constants.TELESCOPE_UP_RIGHT);
+    green.whileHeld(new ShootingSpeed2(m_Shooting));
     // 1/4 Speed
     JoystickButton blue = new JoystickButton(m_OI.Control2, Constants.CLIMB_UP_RIGHT);
-    blue.whileHeld(new shootingSpeedTwo(m_Shooting));
+    blue.whileHeld(new ShootingSpeed3(m_Shooting));
     
     
 
